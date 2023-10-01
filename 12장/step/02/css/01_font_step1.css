@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Catamaran','Noto Sans KR',sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c2c2c;
+}

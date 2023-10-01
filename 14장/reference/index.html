@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="styles/tomorrow-night-eighties.css"> -->
+    <link rel="stylesheet" href="js/styles/monokai-sublime.css">
+    <script src="js/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>CSS만으로 햄버거 메뉴를 구현하는 방법 | Dev Blog</title>
+  </head>
+  <body>
+    <header>
+      <h1><img src="images/logo.png" alt="Dev Blog"></h1>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li class="current"><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div>
+      <main>
+        <article>
+          <h2>CSS만으로 햄버거 메뉴를 구현하는 방법</h2>
+          <p class="postdate">
+            <time datetime="2023-xx-xxT21:34">
+              2023년 8월 8일 오후 9시 34분
+            </time>
+          </p>
+          <p class="eyecatch">
+            <img src="images/eyecatch.png" alt="CSS만으로 햄버거 메뉴 구현">
+          </p>
+          <section>
+            <p>JavaScript 없이 CSS만 사용해서 열리고 닫히는 햄버거 메뉴를 만들 수 있습니다.<br>
+              이번 포스팅에서는 그 방법을 소개합니다!</p>
+            <h3>HTML 작성</h3>
+            <p>
+<pre><code class="html">&lt;nav class="gMenu"&gt;
+  &lt;input class="menu-btn" type="checkbox" id="menu-btn"&gt;
+  &lt;label class="menu-icon" for="menu-btn"&gt;
+    &lt;span class="navicon"&gt;&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </p>
+          </section>
+          <section>
+            <h3>HTML 설명</h3>
+            <section>
+              <h4>HTML 작성 위치</h4>
+              <p>
+                기본적으로 어느 위치에 넣어도 동작하겠지만, header의 마지막이나 body의 종료 태그 직전에 배치하면 무난할 것이라고 생각합니다.
+              </p>
+            </section>
+            <section>
+              <h4>HTML 포인트</h4>
+<pre><code class="html">&lt;nav class="gMenu"&gt;</code></pre>
+              <p>
+                햄버거 메뉴는 대개 글로벌 메뉴로 사용하기 때문에 nav 태그로 작성합니다. 자신의 코드에 맞게 div로 변경해도 상관은 없지만 태그 안에는 class="gMenu"를 넣어주세요.
+              </p>
+<pre><code class="html">&lt;input class="menu-btn" type="checkbox" id="menu-btn"&gt;</code></pre>
+              <p>
+                메뉴의 열림·닫힘 상태를 결정하기 위한 체크박스입니다. 체크박스 자체는 필요 없으니 CSS로 감춰둡니다.
+              </p>
+<pre><code class="html">&lt;label class="menu-icon" for="menu-btn"&gt;
+  &lt;span class="navicon"&gt;&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+              <p>
+                햄버거 메뉴라는 이름의 유래인 세 개의 줄(메뉴의 버튼)을 표시하는 부분입니다. span 태그로 선 하나를 만들고, 이와 동일한 크기의 선을 CSS 가상 요소(::before,::after)로 추가해서 세 줄로 만들겠습니다.
+              </p>
+              <p>
+                label 태그로 마크업하고 for="menu-btn" 속성을 넣으면, label 요소를 클릭했을 때 앞에서 만든 체크박스의 ON/OFF를 변경할 수 있습니다.
+                이는 체크박스가 CSS로 감춰져 있어도 동일하게 동작합니다.
+              </p>
+<pre><code class="html">&lt;ul class="menu"&gt;
+  &lt;li&gt;&lt;a href="menu1.html"&gt;menu1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="menu2.html"&gt;menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="menu3.html"&gt;menu3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              <p>
+                세 줄 버튼을 클릭했을 때 나타날 메뉴 목록입니다. CSS를 통해 기본 모양을 만들고, 세 줄 버튼이 눌리기 전에는 overflow:hidden; max-height:0;으로 표시되지 않도록 설정합니다.
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>전반적인 구조 설명</h3>
+            <p>
+              가상 클래스 선택자 ':checked'와 일반형제결합자 '~'를 조합해서 햄버거 메뉴의 열림·닫힘 상태를 나타냅니다<br>
+            </p>
+            <ul>
+              <li>1. 세 줄 버튼을 누르면 체크박스의 ON/OFF를 변경한다.</li>
+              <li>2. 체크박스가 ON일 때의 CSS는 ':checked'에 지정한다.</li>
+              <li>3. 체크박스가 ON일 때의 세 줄 버튼과 메뉴 목록의 CSS는 ':checked'와 '~'을 조합해서 지정한다.</li>
+              <li>4. 체크박스가 ON일 때 ⇒ 메뉴 목록 표시. 세 줄 버튼은 ✕모양으로.</li>
+              <li>5. 체크박스가 OFF일 때 ⇒ 메뉴 목록 숨김. 세 줄 버튼은 세 줄 모양으로.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>CSS 작성</h3>
+            <p>
+<pre><code class="css">/* 메뉴를 화면 상단에 고정 배치합니다 */
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+/* 세 줄 버튼을 화면 오른쪽 위에 고정 배치합니다 */
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+/* 세 줄 버튼의 가운데 선을 지정합니다 */
+.gMenu .menu-icon .navicon {
+  background: #ffc107; /* 색상은 자유롭게 선택합니다 */
+  display: block;
+  height: 2px; /* 두께 */
+  width: 31px; /* 크기 */
+  position: relative;
+  transition: background .4s ease-out; /* 형태가 바뀔 때의 애니메이션 */
+}
+/* 세 줄 버튼의 위아래 선을 가상 요소로 추가 */
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; /* 색상은 자유롭게 선택합니다 */
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; /* 형태가 바뀔 때의 애니메이션 */
+  width: 100%;
+}
+.gMenu .menu-icon .navicon::before {top: 10px;} /* 가운데보다 약간 위쪽에 배치합니다 */
+.gMenu .menu-icon .navicon::after {top: -10px;} /* 가운데보다 약간 아래쪽에 배치합니다 */
+/* 표시될 메뉴 목록입니다 */
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; /* ★처음에는 높이를 0으로 해서 숨김 상태로 */
+  transition: max-height .6s; /* 표시될 때의 애니메이션 */
+  text-align: center;
+}
+/* 메뉴 항목의 디자인입니다 */
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+/* 체크박스는 항상 숨깁니다 */
+.gMenu .menu-btn {
+  display: none;
+}
+/* ▼▼▼아래는 체크박스가 ON일 때의 상태입니다▼▼▼ */
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; /* ★체크박스가 ON일 때 높이를 338px로 표시합니다 */
+  transition: max-height .6s;
+}
+/* 세 줄 버튼의 가운데 선을 숨김 상태로 만듭니다 */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+/* 세 줄 버튼의 위아래 선을 45도 기울여서 ✕ 모양으로 만듭니다 */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}</code></pre>
+            </p>
+            <section>
+              <h4>■CSS 포인트</h4>
+              <p>
+  <pre><code class="css">.gMenu .menu-btn:checked ~ .menu {</code></pre>
+                체크박스가 체크되었을 때 메뉴 목록 '.menu'의 상태를 지정합니다.
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>CSS 적용 방법</h3>
+            <section>
+              <h4>CSS를 기존 CSS 파일에 추가할 때</h4>
+              <p>
+                위에서 작성한 CSS 코드를 기존 CSS 파일 가장 아래에 복사&붙여넣기합니다.
+              </p>
+            </section>
+            <section>
+              <h4>CSS를 외부 파일로 분리할 때</h4>
+              <p>
+<pre><code class="html">&lt;link rel="stylesheet" href="menu.css"&gt;</code></pre>
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>데모 페이지</h3>
+            <p>동작 확인용 페이지는 <a href="./demo/index.html">여기에</a> 있습니다.</p>
+          </section>
+        </article>
+      </main>
+      <aside>
+        <nav class="authorNav">
+          <h2>Author</h2>
+          <p class="profImage"><img src="images/prof.png" alt="프로필 이미지">
+          </p>
+          <p>마크업 엔지니어입니다.<br>
+          이 블로그는 코딩에 대한 팁과 일상 속 배움을 기록하는 공간입니다.</p>
+        </nav>
+        <nav class="categoryNav">
+          <h2>Category</h2>
+          <ul>
+            <li><a href="#">HTML(14)</a></li>
+            <li><a href="#">CSS(25)</a></li>
+            <li><a href="#">WordPress(31)</a></li>
+            <li><a href="#">업무 팁(12)</a></li>
+            <li><a href="#">JavaScript(21)</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <footer>
+      <p><small>© 2023 Dev Blog</small></p>
+    </footer>
+  </body>
+</html>

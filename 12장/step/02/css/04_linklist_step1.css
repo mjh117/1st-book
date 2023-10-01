@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Catamaran','Noto Sans KR',sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c2c2c;
+}
+img {
+  max-width: 100%;
+}
+.topPage header {
+  height: 90vh;
+  background: url(../images/top_bg.jpg) no-repeat center top/cover;
+  padding-top: 50px;
+  margin-bottom: 64px;
+}
+.topPage header h1 img {
+  width: 240px;
+}
+.topPage header h1 {
+  text-align: center;
+}
+.linkList {
+  padding: 0 20px;
+}
+.linkList li {
+  margin-bottom: 40px;
+}

@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Catamaran','Noto Sans KR',sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c2c2c;
+}
+img {
+  max-width: 100%;
+}
+.topPage header {
+  height: 90vh;
+  background: url(../images/top_bg.jpg) no-repeat center top/cover;
+  padding-top: 50px;
+  margin-bottom: 64px;
+}
+.topPage header h1 img {
+  width: 240px;
+}
+.topPage header h1 {
+  text-align: center;
+}
+.linkList {
+  padding: 0 20px;
+}
+.linkList li {
+  margin-bottom: 40px;
+}
+.linkList li a {
+  display: block;
+  background-color: #f5f5f5;
+}
+.linkList li a span {
+  display: block;
+  padding: 12px 15px 10px;
+  font-size: 18px;
+}
+.linkList li a:hover {
+  filter: brightness(105%);
+}
+.subPage header {
+  border-top: 14px solid #f5f5f5;
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+.subPage header h1 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.subPage header h1 span {
+  background-image: linear-gradient(135deg,#e6ba5d 0%,#9ac78a 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.subPage h2 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .17em;
+  margin-bottom: 10px;
+}
+.subPage .lead {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 11px;
+  letter-spacing: .05em;
+  line-height: 2;
+}
+.subPage h3 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.subPage main {
+  padding: 0 20px;
+}
+footer {
+  background: url(../images/footer_mt.svg) no-repeat right top/200px;
+  margin-top: 60px;
+  padding-top: 68px;
+}
+footer p {
+  background-color: #f5f5f5;
+}
+footer p img {
+  width: 188px;
+  transform: translateY(-28px);
+}
+.conceptDetailSec p img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 90%;
+}
+.conceptDetailSec .text {
+  font-size: 12px;
+  line-height: 1.78;
+}
+.conceptDetailSec {
+  margin-bottom: 50px;
+}
+.conceptDetailSec .photo {
+  margin-bottom: 14px;
+}
+.menuList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.menuList li {
+  flex-basis: 42%;
+  margin-bottom: 28px;
+}
+.menuList li img {
+  filter: drop-shadow(1px 2px 3px #dddddd);
+}
+.menuDetailSec {
+  margin-bottom: 50px;
+}
+.map iframe {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 8px;
+}
+.map {
+  font-size: 12px;
+  margin-bottom: 60px;
+}
+.photoGallery {
+  display: grid;
+  grid-template-rows: 40vw 30vw 30vw 40vw 40vw;
+  grid-template-columns: 50% 50%;
+}
+.item01 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.item02 {
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
+}
+.item03 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+.item04 {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+.item05 {
+  grid-row: 4 / 5;
+  grid-column: 1 / 3;
+}
+.item06 {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+}
+.item07 {
+  grid-row: 5 / 6;
+  grid-column: 2 / 3;
+}
+.photoGallery li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 920px) {
+  .topPage {
+    display: flex;
+  }
+  .topPage header {
+    flex-basis: 38%;
+  }
+  .topPage main {
+    flex-basis: 62%;
+  }
+  .linkList {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  .linkList li {
+    flex-basis: 47%;
+    margin-bottom: 20px;
+  }
+  .linkList::before {
+    content: "";
+    width: 47%;
+    background: url(../images/top_pclogo.svg) no-repeat center center/72%;
+  }
+  .topPage main {
+    display: flex;
+    align-items: center;
+  }
+  .topPage header {
+    height: 100vh;
+    margin-bottom: 0;
+  }
+  .subPage main {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .subPage header h1 {
+    font-size: 60px;
+  }
+  .onlySP {
+    display: none;
+  }
+  .subPage h2 {
+    font-size: 34px;
+    margin-bottom: 36px;
+  }
+  .subPage .lead {
+    font-size: 18px;
+    margin-bottom: 160px;
+  }
+  .subPage h3 {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  .conceptDetailSec {
+    display: grid;
+    grid-template-rows: 360px 360px;
+    grid-template-columns: 40% 60%;
+  }
+  .conceptDetailSec h3 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  .conceptDetailSec .photo {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+  .conceptDetailSec .text {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+  .conceptDetailSec .photo img {
+    height: 720px;
+  }
+  .conceptDetailSec h3 {
+    align-self: end;
+  }
+  .conceptDetailSec .text {
+    text-align: center;
+    font-size: 16px;
+  }
+  .reverse {
+    grid-template-columns: 60% 40%;
+  }
+  .reverse h3 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .reverse .photo {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
+  .reverse .text {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  .menuList li {
+    flex-basis: 22%;
+    margin-bottom: 0;
+  }
+  .menuDetailSec {
+    margin-bottom: 160px;
+  }
+  .photoGallery {
+    grid-template-rows: 175px 175px 290px;
+    grid-template-columns: 50% 20% 30%;
+  }
+  .item01 {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+  .item02 {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
+  .item03 {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+  .item04 {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+  .item05 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  .item06 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+  .item07 {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+  }
+}
+/* 아래에 참고 사이트의 메뉴 구현 CSS를 붙여넣습니다. */
+/* 메뉴를 화면 상단에 고정 배치합니다 */
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+/* 세 줄 버튼을 화면 오른쪽 위에 고정 배치합니다 */
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+/* 세 줄 버튼의 가운데 선을 지정합니다 */
+.gMenu .menu-icon .navicon {
+  background: #ffc107; /* 색상은 자유롭게 선택합니다 */
+  display: block;
+  height: 2px; /* 두께 */
+  width: 31px; /* 크기 */
+  position: relative;
+  transition: background .4s ease-out; /* 형태가 바뀔 때의 애니메이션 */
+}
+/* 세 줄 버튼의 위아래 선을 가상 요소로 추가 */
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; /* 색상은 자유롭게 선택합니다 */
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; /* 형태가 바뀔 때의 애니메이션 */
+  width: 100%;
+}
+.gMenu .menu-icon .navicon::before {top: 10px;} /* 가운데보다 약간 위쪽에 배치합니다 */
+.gMenu .menu-icon .navicon::after {top: -10px;} /* 가운데보다 약간 아래쪽에 배치합니다 */
+/* 표시될 메뉴 목록입니다 */
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; /* ★처음에는 높이를 0으로 해서 숨김 상태로 */
+  transition: max-height .6s; /* 표시될 때의 애니메이션 */
+  text-align: center;
+}
+/* 메뉴 항목의 디자인입니다 */
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+/* 체크박스는 항상 숨깁니다 */
+.gMenu .menu-btn {
+  display: none;
+}
+/* ▼▼▼아래는 체크박스가 ON일 때의 상태입니다▼▼▼ */
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; /* ★체크박스가 ON일 때 높이를 338px로 표시합니다 */
+  transition: max-height .6s;
+}
+/* 세 줄 버튼의 가운데 선을 숨김 상태로 만듭니다 */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+/* 세 줄 버튼의 위아래 선을 45도 기울여서 ✕ 모양으로 만듭니다 */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+/* 사이트에 맞춰서 샘플 코드를 커스터마이즈 */
+.gMenu .menu-icon {
+  top: 26px;
+}
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #333333;
+}

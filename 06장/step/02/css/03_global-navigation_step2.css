@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body {
+  background-image: url(../images/bg.png);
+  font-size: 16px;
+  font-family: 'arial','Apple SD Gothic Neo','NanumGothic',sans-serif;
+  color: #333333;
+}
+header {
+  width: 1240px;
+  margin: 0 auto 44px;
+}
+h1 {
+  text-align: center;
+  padding: 20px 0px 16px;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+}

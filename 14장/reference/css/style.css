@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+body {
+  font-size: 16px;
+  font-family: 'arial','Apple SD Gothic Neo','NanumGothic',sans-serif;
+  line-height: 1.6;
+  background-color: #fbfbfb;
+  color: #333333;
+}
+header {
+  width: 1240px;
+  margin: 0 auto 60px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+h1 {
+  flex-basis: 18%;
+}
+h1 img{
+  max-width: 100%;
+}
+header nav {
+  margin-left: auto;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li a {
+  display: block;
+  padding: 10px 60px;
+  font-weight: bold;
+  background-color: #111111;
+  color: #ffffff;
+}
+header nav ul li a:hover {
+  background-color: #333333;
+}
+header nav ul li.current a {
+  background-color: #eaeaea;
+  color: #333333;
+}
+div {
+  width: 1240px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-between;
+}
+main {
+  flex-basis: 920px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.16);
+  border-radius: 3px;
+  padding: 62px 72px 32px 72px;
+}
+aside {
+  flex-basis: 284px;
+}
+aside nav {
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.16);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+aside nav h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #111111;
+  text-align: center;
+}
+aside nav ul {
+  font-size: 14px;
+}
+.authorNav .profImage{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.authorNav .profImage img{
+  max-width: 70%;
+}
+.categoryNav ul li {
+  list-style-type: square;
+  color: #111111;
+  margin: 0 0 16px 20px;
+}
+.categoryNav ul li a {
+  color: #333333;
+}
+article h2 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+time {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+.postdate {
+  margin-bottom: 26px;
+}
+article h3 {
+  border-left: 8px solid #ffb41d;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 10px;
+}
+article h4 {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 8px 6px 8px;
+  margin-bottom: 16px;
+}
+
+article p {
+  margin-bottom: 24px;
+}
+article ul {
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 16px 16px 10px;
+  background-color: #f5f5f5;
+}
+article ul li {
+  margin: 0px 0px 10px 0px;
+
+}
+article section {
+  margin-bottom: 30px;
+}
+code pre{
+  background: #f3f5f6;
+  padding: 30px;
+}
+footer {
+  background-color: #111111;
+  padding: 14px 10px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+a {
+  color: #f29304;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}

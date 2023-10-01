@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/01_date_step1.css"><!-- ←여러분의 작업 파일에는 css/style.css가 들어갑니다 -->
+    <title>Wedding Party Invitation</title>
+  </head>
+  <body>
+    <header>
+      <div class="innerWrap">
+        <h1>
+          <img src="images/hero_text.png" alt="Welcome to Our Wedding Party">
+        </h1>
+        <nav>
+          <ul class="ffJosefin">
+            <li><a href="#msgArea">Message</a></li>
+            <li><a href="#dateArea">Date</a></li>
+            <li><a href="#formArea">Form</a></li>
+          </ul>
+        </nav>
+        <p class="scroll ffJosefin">Scroll<br><img src="images/bar.png" alt=""></p>
+      </div>
+    </header>
+    <main>
+      <section class="msgSec" id="msgArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">Message</h2>
+          <p>
+            금번 카피조우와 카피코는<br>
+            웨딩 파티를 개최하게 되었습니다.<br>
+          </p>
+          <p>
+            바쁘시겠지만 부디 오셔서 축하해주시면 더없이 기쁘겠습니다.<br>
+            참석 여부는 페이지 하단 폼을 통해 알려주실 수 있습니다.<br>
+          </p>
+          <p class="illust"><img src="images/message_img.png" alt="카피조우와 카피코"></p>
+        </div>
+      </section>
+      <section class="dateSec" id="dateArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">Save the Date</h2>
+          <p><img src="images/date_img.jpg" alt=""></p>
+          <p class="dateDetailSec">
+            3023.8.8 Thu<br>
+            Start 18:30-
+          </p>
+          <section class="accessSec">
+            <h3 class="ffJosefin">Access</h3>
+            <p>
+              나뭇잎길 1-2-3<br>
+              Ristorante Capita에서<br>
+              02-XXXX-XXXX<br>
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="formSec" id="formArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">RSVP</h2>
+          <form action="" method="">
+            <p class="attendRadio">
+              <label><input type="radio" name="attend" value="참석" checked="checked">참석</label>
+              <label><input type="radio" name="attend" value="불참">불참</label>
+            </p>
+            <p>
+              성함<input type="text" name="user_name">
+            </p>
+            <p>
+              메일 주소<input type="email" name="user_mail">
+            </p>
+            <p>
+              자신의 유형
+              <select name="user_type">
+                <option value="초식 동물">초식 동물</option>
+                <option value="육식 동물">육식 동물</option>
+                <option value="인간">인간</option>
+              </select>
+            </p>
+            <p class="allergyCheck">
+              알레르기가 있는 음식<br>
+              <label><input type="checkbox" name="allergy" value="달걀">달걀</label>
+              <label><input type="checkbox" name="allergy" value="우유">우유</label>
+              <label><input type="checkbox" name="allergy" value="밀">밀</label>
+              <label><input type="checkbox" name="allergy" value="대두">대두</label>
+            </p>
+            <p>
+              메시지
+              <textarea name="message"></textarea>
+            </p>
+            <p class="submitBtn">
+              <input type="submit" value="Send" class="ffJosefin">
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="ffJosefin">
+      <p><small>© Capyzou & Capyco</small></p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+@charset "utf-8";
+body {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  color: #121212;
+}
+.ffJosefin {
+  font-family: 'Josefin Sans',sans-serif;
+}
+.innerWrap {
+  border: 4px solid lightblue;
+  width: 1240px;
+  margin: 0 auto;
+  padding: 80px 20px 0;
+}
+main h2 {
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: .05em;
+  margin-bottom: 80px;
+}
+header {
+  background: url(../images/hero.jpg) no-repeat right center/cover;
+}
+header .innerWrap {
+  height: 720px;
+  position: relative;
+}
+header h1 {
+  padding-top: 120px;
+}
+header .scroll {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+header .scroll img {
+  margin-top: 8px;
+}
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+}

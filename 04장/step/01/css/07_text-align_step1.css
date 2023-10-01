@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body {
+  background-color: #bbf1ef;
+  font-family: 'Verdana','Apple SD Gothic Neo','NanumGothic',sans-serif;
+}
+h1 {
+  font-size: 18px;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  padding: 6px 0;
+  margin: 20px auto;
+  width: 300px;
+  text-align: center;
+}
